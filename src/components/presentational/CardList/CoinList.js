@@ -1,16 +1,23 @@
 import React from 'react';
 import Card from '../Card/Card';
+import './CoinList.css';
 
 // Build URL for coin logos
-const buildImgSrc = (baseUrl, path) => {
-  return baseUrl + path;
+const buildImgSrc = (symbol, baseUrl, data) => {
+  // Check if ticker symbol exits in data
+  if ( symbol in data) {
+    // If it does build the URL
+    return baseUrl + data[symbol].ImageUrl;
+  }
+  // Else add a placeholder
+  return 'http://fillmurray.com/50/50';
 };
 
 const CoinList = props => (
-  <div>
+  <div className={"CoinList"}>
     {props.coins.map(coin =>
       <Card key={coin.id} name={coin.name} symbol={coin.symbol} price={coin.price_usd}
-            imgSrc={buildImgSrc(props.baseImgUrl, props.extraCoinData[coin.symbol].ImageUrl)} />
+            imgSrc={buildImgSrc( coin.symbol, props.baseImgUrl, props.extraCoinData)} />
     )}
   </div>
 );
