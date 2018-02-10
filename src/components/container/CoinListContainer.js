@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios/index';
 import { COINMARKETCAP_API_URI, CRYPTOCOMPARE_API_URI } from '../../utils/constants';
-import CardList from '../presentational/CardList/CoinList';
+import CardList from '../presentational/CardList/CardList';
 
 class CoinListContainer extends React.Component {
 
