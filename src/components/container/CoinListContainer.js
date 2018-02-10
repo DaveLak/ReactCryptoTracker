@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios/index';
 import { COINMARKETCAP_API_URI, CRYPTOCOMPARE_API_URI } from '../../utils/constants';
-import CardList from '../presentational/CardList/CoinList';
+import CoinList from '../presentational/CardList/CoinList';
 
 class CoinListContainer extends React.Component {
 
@@ -25,7 +25,7 @@ class CoinListContainer extends React.Component {
 
   // Set up request to receive additional data (only used for images right now)
   getCryptoCompareData() {
-    return axios.get(CRYPTOCOMPARE_API_URI);
+    return axios.get(CRYPTOCOMPARE_API_URI + '/all/coinlist');
   }
 
   // Runs both API calls concurrently and set state when promise resolves
@@ -48,7 +48,7 @@ class CoinListContainer extends React.Component {
   }
 
   render() {
-    return <CardList {...this.state} />;
+    return <CoinList {...this.state} />;
   }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../Card/Card';
+import CoinCard from '../../container/CoinCard/CoinCard';
 import './CoinList.css';
 
 // Build URL for coin logos
@@ -16,7 +16,7 @@ const buildImgSrc = (symbol, baseUrl, data) => {
 const CoinList = props => (
   <div className={"CoinList"}>
     {props.coins.map(coin =>
-      <Card key={coin.id} name={coin.name} symbol={coin.symbol} price={coin.price_usd}
+      <CoinCard key={coin.id} name={coin.name} symbol={coin.symbol}
             imgSrc={buildImgSrc( coin.symbol, props.baseImgUrl, props.extraCoinData)} />
     )}
   </div>
