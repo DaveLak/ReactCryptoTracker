@@ -20,7 +20,7 @@ class CoinListContainer extends React.Component {
 
   // Set up request to receive our coin list
   getMarketCapData() {
-    return axios.get(COINMARKETCAP_API_URI + '?limit=10');
+    return axios.get(COINMARKETCAP_API_URI + '?limit=20');
   }
 
   // Set up request to receive additional data (only used for images right now)
