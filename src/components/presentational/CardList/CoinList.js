@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
-import './CardList.css';
+import './CoinList.css';
 
 // Build URL for coin logos
 const buildImgSrc = (symbol, baseUrl, data) => {
