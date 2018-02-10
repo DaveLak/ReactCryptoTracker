@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'normalize.css';
 import Header from './components/presentational/Header/Header';
-import CardHolder from './components/presentational/CardHolder/CardHolder'
+import CardHolder from './components/presentational/CardHolder/CardHolder';
 import CoinListContainer from './components/container/CoinListContainer';
 import './App.css';
 

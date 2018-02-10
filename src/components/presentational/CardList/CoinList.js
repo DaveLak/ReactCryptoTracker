@@ -14,7 +14,7 @@ const buildImgSrc = (symbol, baseUrl, data) => {
 };
 
 const CoinList = props => (
-  <div className={'CoinList'}>
+  <div className="CoinList">
     {props.coins.map(coin =>
       <CoinCard key={coin.id} name={coin.name} symbol={coin.symbol}
                 imgSrc={buildImgSrc(coin.symbol, props.baseImgUrl, props.extraCoinData)} />
