@@ -13,7 +13,7 @@ class CoinListContainer extends React.Component {
       baseImgUrl: '',
       extraCoinData: []
     };
-    this.getCryptoCompairData = this.getCryptoCompairData.bind(this);
+    this.getCryptoCompareData = this.getCryptoCompareData.bind(this);
     this.getMarketCapData = this.getMarketCapData.bind(this);
     this.getCoinData = this.getCoinData.bind(this);
   }
@@ -24,18 +24,18 @@ class CoinListContainer extends React.Component {
   }
 
   // Set up request to receive additional data (only used for images right now)
-  getCryptoCompairData() {
+  getCryptoCompareData() {
     return axios.get(CRYPTOCOMPARE_API_URI);
   }
 
   // Runs both API calls concurrently and set state when promise resolves
   getCoinData() {
-    axios.all([this.getMarketCapData(), this.getCryptoCompairData()])
-      .then(axios.spread((marketCap, cryptoCompair) => {
+    axios.all([this.getMarketCapData(), this.getCryptoCompareData()])
+      .then(axios.spread((marketCap, cryptoCompare) => {
         this.setState({
           coins: marketCap.data,
-          baseImgUrl: cryptoCompair.data.BaseImageUrl,
-          extraCoinData: cryptoCompair.data.Data
+          baseImgUrl: cryptoCompare.data.BaseImageUrl,
+          extraCoinData: cryptoCompare.data.Data
         });
       })).catch(err => {
       console.log(err);
