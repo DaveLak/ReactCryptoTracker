@@ -8,6 +8,7 @@ const initialState = {
     isFetching: true,
     topCoins: [],
     coinData: [],
+    baseImgUrl: '',
   }
 };
 

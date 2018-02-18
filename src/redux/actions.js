@@ -2,9 +2,7 @@ import { COINMARKETCAP_API_URI, CRYPTOCOMPARE_API_URI } from '../utils/constants
 
 export const UPDATE_DISPLAY_CURRENCY = 'UPDATE_DISPLAY_CURRENCY';
 export const UPDATE_DISPLAY_COUNT = 'UPDATE_DISPLAY_COUNT';
-export const SET_COIN_DATA = 'SET_COIN_DATA';
 export const GET_COIN_DATA = 'GET_COIN_DATA';
-
 
 // Action fired when we receive coin list
 export const RECEIVE_TOP_COINS_LIST = 'RECEIVE_TOP_COINS_LIST';
@@ -43,4 +41,33 @@ export function fetchTopCoinList() {
         data => dispatch(receiveTopCoinsList(data))
       );
   };
+}
+
+// Action fired when we receive coin data
+export const RECEIVE_COIN_DATA = 'RECEIVE_COIN_DATA';
+
+export function receiveCoinData(data, baseImgUrl) {
+  return {
+    type: RECEIVE_COIN_DATA,
+    payload: data,
+    baseImgUrl
+  };
+}
+
+// Fetch coin data from CryptoCompare
+export function fetchCoinData() {
+  return function (dispatch) {
+
+    // TODO: dispatch an action so store knows we are fetching data
+
+    return fetch(CRYPTOCOMPARE_API_URI + '/all/coinlist')
+      .then(
+        response => response.json(),
+        error => console.log('An error occurred.', error)
+      )
+      .then(
+        res => dispatch(receiveCoinData(res.Data, res.BaseImageUrl))
+      );
+  };
+
 }

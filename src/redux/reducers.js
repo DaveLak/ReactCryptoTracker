@@ -5,7 +5,7 @@ import {
   UPDATE_DISPLAY_CURRENCY,
   RECEIVE_TOP_COINS_LIST,
   REQUEST_TOP_COINS_LIST,
-  SET_COIN_DATA,
+  RECEIVE_COIN_DATA,
   GET_COIN_DATA,
 } from './actions';
 
@@ -42,11 +42,12 @@ const data = (state = initialState.data, action) => {
         isFetching: false,
         topCoins: action.payload
       };
-    case SET_COIN_DATA:
+    case RECEIVE_COIN_DATA:
       return {
         ...state,
         isFetching: false,
-        coinData: action.payload
+        coinData: action.payload,
+        baseImgUrl: action.baseImgUrl
       };
     default:
       return state;
