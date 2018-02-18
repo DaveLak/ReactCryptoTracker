@@ -9,10 +9,10 @@ export const GET_COIN_DATA = 'GET_COIN_DATA';
 // Action fired when we receive coin list
 export const RECEIVE_TOP_COINS_LIST = 'RECEIVE_TOP_COINS_LIST';
 // Send coin list to reducer as `payload`
-export function receiveTopCoinsList(coinData) {
+export function receiveTopCoinsList(coinList) {
   return {
-    type: SET_COIN_DATA,
-    payload: coinData
+    type: RECEIVE_TOP_COINS_LIST,
+    payload: coinList
   };
 }
 
