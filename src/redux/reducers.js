@@ -6,7 +6,7 @@ import {
   RECEIVE_TOP_COINS_LIST,
   REQUEST_TOP_COINS_LIST,
   RECEIVE_COIN_DATA,
-  GET_COIN_DATA,
+  REQUEST_COIN_DATA,
 } from './actions';
 
 /* Display options reducer */
@@ -30,11 +30,15 @@ const displayOptions = (state = initialState.displayOptions, action) => {
 /* Data reducer. */
 const data = (state = initialState.data, action) => {
   switch (action.type) {
-    case GET_COIN_DATA:
+    case REQUEST_COIN_DATA:
+      return {
+        ...state,
+        hasCoinData: false
+      };
     case REQUEST_TOP_COINS_LIST:
       return {
         ...state,
-        isFetching: true
+        hasCoinList: false
       };
     case RECEIVE_TOP_COINS_LIST:
       return {

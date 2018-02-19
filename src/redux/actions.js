@@ -2,10 +2,10 @@ import { COINMARKETCAP_API_URI, CRYPTOCOMPARE_API_URI } from '../utils/constants
 
 export const UPDATE_DISPLAY_CURRENCY = 'UPDATE_DISPLAY_CURRENCY';
 export const UPDATE_DISPLAY_COUNT = 'UPDATE_DISPLAY_COUNT';
-export const GET_COIN_DATA = 'GET_COIN_DATA';
 
 // Action fired when we receive coin list
 export const RECEIVE_TOP_COINS_LIST = 'RECEIVE_TOP_COINS_LIST';
+
 // Send coin list to reducer as `payload`
 export function receiveTopCoinsList(coinList) {
   return {
@@ -16,7 +16,7 @@ export function receiveTopCoinsList(coinList) {
 
 // Action for requesting list of coins with highest market cap
 export const REQUEST_TOP_COINS_LIST = 'REQUEST_TOP_COINS_LIST';
-// Tell store we are starting a request
+
 export function requestTopCoinsList() {
   return {
     type: REQUEST_TOP_COINS_LIST
@@ -26,7 +26,7 @@ export function requestTopCoinsList() {
 // Fetch initial data to populate market capitalization
 export function fetchTopCoinList() {
   return function (dispatch) {
-    // Tells state we are fetching
+    // Tell store we are starting a request
     // TODO: Load spinner
     dispatch(requestTopCoinsList());
 
@@ -40,6 +40,15 @@ export function fetchTopCoinList() {
         // Dispatch action to set list in store
         data => dispatch(receiveTopCoinsList(data))
       );
+  };
+}
+
+// Action for requesting coin data
+export const REQUEST_COIN_DATA = 'REQUEST_COIN_DATA';
+
+export function requestCoinData() {
+  return {
+    type: REQUEST_COIN_DATA
   };
 }
 
@@ -58,7 +67,7 @@ export function receiveCoinData(data, baseImgUrl) {
 export function fetchCoinData() {
   return function (dispatch) {
 
-    // TODO: dispatch an action so store knows we are fetching data
+    dispatch(requestCoinData());
 
     return fetch(CRYPTOCOMPARE_API_URI + '/all/coinlist')
       .then(

@@ -5,7 +5,8 @@ const initialState = {
     count: '10',
   },
   data: {
-    isFetching: true,
+    hasCoinList: false,
+    hasCoinData: false,
     topCoins: [],
     coinData: [],
     baseImgUrl: '',
