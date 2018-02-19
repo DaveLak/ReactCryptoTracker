@@ -4,9 +4,8 @@ import {
   UPDATE_DISPLAY_COUNT,
   UPDATE_DISPLAY_CURRENCY,
   RECEIVE_TOP_COINS_LIST,
-  REQUEST_TOP_COINS_LIST,
-  RECEIVE_COIN_DATA,
-  REQUEST_COIN_DATA,
+  REQUEST_INITIAL_DATA,
+  RECEIVE_INITIAL_DATA,
 } from './actions';
 
 /* Display options reducer */
@@ -30,28 +29,18 @@ const displayOptions = (state = initialState.displayOptions, action) => {
 /* Data reducer. */
 const data = (state = initialState.data, action) => {
   switch (action.type) {
-    case REQUEST_COIN_DATA:
+    case REQUEST_INITIAL_DATA:
       return {
         ...state,
-        hasCoinData: false
+        isReady: false
       };
-    case REQUEST_TOP_COINS_LIST:
+    case RECEIVE_INITIAL_DATA:
       return {
         ...state,
-        hasCoinList: false
-      };
-    case RECEIVE_TOP_COINS_LIST:
-      return {
-        ...state,
-        hasCoinList: true,
-        topCoins: action.payload
-      };
-    case RECEIVE_COIN_DATA:
-      return {
-        ...state,
-        hasCoinData: true,
-        coinData: action.payload,
-        baseImgUrl: action.baseImgUrl
+        isReady: true,
+        topCoins: action.payload.topCoins,
+        coinData: action.payload.coinData,
+        baseImgUrl: action.payload.baseImgUrl,
       };
     default:
       return state;

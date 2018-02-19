@@ -5,8 +5,7 @@ const initialState = {
     count: '10',
   },
   data: {
-    hasCoinList: false,
-    hasCoinData: false,
+    isReady: false,
     topCoins: [],
     coinData: [],
     baseImgUrl: '',

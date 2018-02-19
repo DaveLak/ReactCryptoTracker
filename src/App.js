@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchTopCoinList, fetchCoinData } from './redux/actions';
+import { fetchCoinData } from './redux/actions';
 import CardHolder from './components/CardHolder/CardHolder';
 import CoinList from './components/CoinList';
 import './App.css';
@@ -8,18 +8,17 @@ import './App.css';
 class App extends Component {
 
   componentDidMount() {
-    const {dispatch, fetchTopCoinList, fetchCoinData} = this.props;
-    dispatch(fetchTopCoinList());
+    const {dispatch, fetchCoinData} = this.props;
     dispatch(fetchCoinData());
   }
 
   render() {
 
-    const {hasCoinList, hasCoinData} = this.props;
+    const {isReady} = this.props;
 
     return (
       <div className="App">
-        {(hasCoinList && hasCoinData) ? (
+        {isReady ? (
           <CardHolder>
             <CoinList />
           </CardHolder>
@@ -35,15 +34,13 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    hasCoinList: state.data.hasCoinList,
-    hasCoinData: state.data.hasCoinData
+    isReady: state.data.isReady
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     dispatch,
-    fetchTopCoinList,
     fetchCoinData
   };
 };
