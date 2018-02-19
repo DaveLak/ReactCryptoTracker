@@ -1,24 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import thunkMiddleware from 'redux-thunk';
-import { createLogger } from 'redux-logger';
-import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './redux/reducers';
-import { fetchTopCoinList } from './redux/actions';
-import './index.css';
-import App from './App';
+import 'normalize.css';
+
+import configureStore from './redux/store/configureStore';
 import registerServiceWorker from './registerServiceWorker';
+import App from './App';
+import './index.css';
 
-const loggerMiddleware = createLogger();
-
-let store = createStore(
-  rootReducer,
-  applyMiddleware(
-    thunkMiddleware,
-    loggerMiddleware
-  )
-);
+// Set up our Redux store
+const store = configureStore();
 
 render(
   <Provider store={store}>

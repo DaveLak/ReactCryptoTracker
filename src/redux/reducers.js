@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import initialState from './initialState';
+import initialState from './store/initialState';
 import {
   UPDATE_DISPLAY_COUNT,
   UPDATE_DISPLAY_CURRENCY,
