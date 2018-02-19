@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { CRYPTOCOMPARE_API_URI } from '../../../utils/constants';
-import Card from '../../presentational/Card/Card';
+import { CRYPTOCOMPARE_API_URI } from '../../utils/constants';
+import Card from '../Card/Card';
 
 class CoinCard extends React.Component {
   constructor(props) {

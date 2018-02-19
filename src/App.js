@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchTopCoinList, fetchCoinData } from './redux/actions';
-import CardHolder from './components/presentational/CardHolder/CardHolder';
-import CoinListContainer from './components/container/CoinListContainer';
+import CardHolder from './components/CardHolder/CardHolder';
+import CoinList from './components/CoinList';
 import './App.css';
 
 class App extends Component {
@@ -21,7 +21,7 @@ class App extends Component {
       <div className="App">
         {(hasCoinList && hasCoinData) ? (
           <CardHolder>
-            <CoinListContainer />
+            <CoinList />
           </CardHolder>
         ) : (
           <h2>Loading...</h2>

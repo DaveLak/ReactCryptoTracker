@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import CoinList from '../presentational/CoinList/CoinList';
+import CoinList from './CoinList';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -9,6 +9,4 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const CoinListContainer = connect(mapStateToProps)(CoinList);
-
-export default CoinListContainer;
+export default connect(mapStateToProps)(CoinList)

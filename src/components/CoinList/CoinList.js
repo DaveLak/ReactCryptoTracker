@@ -1,5 +1,5 @@
 import React from 'react';
-import CoinCard from '../../container/CoinCard/CoinCard';
+import CoinCard from '../CoinCard/CoinCard';
 import './CoinList.css';
 
 // Build URL for coin logos
@@ -13,11 +13,11 @@ const buildImgSrc = (symbol, baseUrl, data) => {
   return 'http://fillmurray.com/50/50';
 };
 
-const CoinList = props => (
+const CoinList = ({coins, baseImgUrl, extraCoinData}) => (
   <div className="CoinList">
-    {props.coins.map(coin =>
+    {coins.map(coin =>
       <CoinCard key={coin.id} name={coin.name} symbol={coin.symbol}
-                imgSrc={buildImgSrc(coin.symbol, props.baseImgUrl, props.extraCoinData)} />
+                imgSrc={buildImgSrc(coin.symbol, baseImgUrl, extraCoinData)} />
     )}
   </div>
 );
