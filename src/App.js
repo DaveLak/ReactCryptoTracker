@@ -14,19 +14,29 @@ class App extends Component {
   }
 
   render() {
+
+    const {hasCoinList, hasCoinData} = this.props;
+
     return (
       <div className="App">
-        <CardHolder>
-          <CoinListContainer />
-        </CardHolder>
+        {(hasCoinList && hasCoinData) ? (
+          <CardHolder>
+            <CoinListContainer />
+          </CardHolder>
+        ) : (
+          <h2>Loading...</h2>
+        )
+
+        }
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    isReady: state.data.isFetching
+    hasCoinList: state.data.hasCoinList,
+    hasCoinData: state.data.hasCoinData
   };
 };
 

@@ -43,13 +43,13 @@ const data = (state = initialState.data, action) => {
     case RECEIVE_TOP_COINS_LIST:
       return {
         ...state,
-        isFetching: false,
+        hasCoinList: true,
         topCoins: action.payload
       };
     case RECEIVE_COIN_DATA:
       return {
         ...state,
-        isFetching: false,
+        hasCoinData: true,
         coinData: action.payload,
         baseImgUrl: action.baseImgUrl
       };
