@@ -5,7 +5,7 @@ import 'normalize.css';
 
 import configureStore from './redux/store/configureStore';
 import registerServiceWorker from './registerServiceWorker';
-import App from './App';
+import App from './components/App';
 import './index.css';
 
 // Set up our Redux store

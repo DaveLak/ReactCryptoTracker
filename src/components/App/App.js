@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchCoinData } from './redux/actions';
-import CardHolder from './components/CardHolder/CardHolder';
-import CoinList from './components/CoinList';
+import CardHolder from '../CardHolder/CardHolder';
+import CoinList from '../CoinList/index';
 import './App.css';
 
 class App extends Component {
@@ -32,17 +30,4 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    isReady: state.data.isReady
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    dispatch,
-    fetchCoinData
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
