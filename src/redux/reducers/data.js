@@ -1,31 +1,14 @@
-import { combineReducers } from 'redux';
-import initialState from './store/initialState';
+import initialState from '../store/initialState';
 import {
-  UPDATE_DISPLAY_COUNT,
-  UPDATE_DISPLAY_CURRENCY,
-  REQUEST_INITIAL_DATA,
+  SET_VISIBLE_COINS
+} from '../actions/visibleCoins';
+import {
+  RECEIVE_COIN_PRICE
+} from '../actions/coinPrice';
+import {
   RECEIVE_INITIAL_DATA,
-  SET_VISIBLE_COINS,
-  RECEIVE_COIN_PRICE,
-} from './actions';
-
-/* Display options reducer */
-const displayOptions = (state = initialState.displayOptions, action) => {
-  switch (action.type) {
-    case UPDATE_DISPLAY_CURRENCY:
-      return {
-        ...state,
-        currency: action.payload
-      };
-    case UPDATE_DISPLAY_COUNT:
-      return {
-        ...state,
-        count: action.payload
-      };
-    default:
-      return state;
-  }
-};
+  REQUEST_INITIAL_DATA
+} from '../actions/initialData';
 
 /* Data reducer. */
 const data = (state = initialState.data, action) => {
@@ -66,7 +49,7 @@ const setCoinPrice = (visibleCoins, payload) => {
   return {
     ...visibleCoins,
     [payload.coinSymbol]: prop
-  }
+  };
 };
 
 const setVisibleCoins = (state, count) => {
@@ -97,9 +80,4 @@ const buildImgSrc = (coinSymbol, baseUrl, data) => {
   return 'http://fillmurray.com/50/50';
 };
 
-const rootReducer = combineReducers({
-  displayOptions,
-  data
-});
-
-export default rootReducer;
+export default data;
