@@ -5,6 +5,7 @@ const Card = ({imgSrc, name, symbol, price, displayCurrency}) => (
   <div className="Card">
     <img src={imgSrc} alt={`${name} logo`} />
     <h3>{name}</h3>
+    <p>{symbol}</p>
     <p>{price} {displayCurrency}</p>
   </div>
 );
