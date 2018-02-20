@@ -4,9 +4,9 @@ import './CoinList.css';
 
 const CoinList = ({coins}) => (
   <div className="CoinList">
-    {coins.map(coin =>
-      <CoinCard key={coin.coinSymbol} name={coin.name} symbol={coin.coinSymbol}
-                imgSrc={coin.imgSrc} />
+    {Object.keys(coins).map(key =>
+      <CoinCard key={coins[key].coinSymbol} name={coins[key].name} symbol={coins[key].coinSymbol}
+                imgSrc={coins[key].imgSrc} />
     )}
   </div>
 );

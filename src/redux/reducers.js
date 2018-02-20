@@ -54,17 +54,20 @@ const data = (state = initialState.data, action) => {
 
 const setVisibleCoins = (state, count) => {
 
-  return state.topCoins
-    .filter(coin => {
-      return Number(coin.rank) <= Number(count);
-    }).map(({name, symbol}) => {
-      return {
-        coinSymbol: symbol,
-        name: name,
-        imgSrc: buildImgSrc(symbol, state.baseImgUrl, state.coinData),
+  let visibleCoins = {};
+
+  state.topCoins
+    .slice(0, (Number(count) ))
+    .forEach(coin => {
+      return visibleCoins[coin.symbol] = {
+        coinSymbol: coin.symbol,
+        name: coin.name,
+        imgSrc: buildImgSrc(coin.symbol, state.baseImgUrl, state.coinData),
         price: 'loading...'
       };
-    })
+    });
+
+  return visibleCoins;
 };
 
 const buildImgSrc = (coinSymbol, baseUrl, data) => {

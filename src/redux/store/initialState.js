@@ -9,7 +9,7 @@ const initialState = {
     topCoins: [],
     coinData: [],
     baseImgUrl: '',
-    visibleCoins: [],
+    visibleCoins: {},
   }
 };
 
