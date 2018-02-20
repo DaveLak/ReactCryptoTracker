@@ -1,5 +1,5 @@
 import React from 'react';
-import CoinList from '../CoinList/CoinList';
+import CoinList from '../../presentation/CoinList/CoinList';
 
 class VisibleCoinList extends React.Component {
 

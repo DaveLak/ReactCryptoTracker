@@ -1,5 +1,5 @@
 import React from 'react';
-import CoinCard from '../CoinCard';
+import CoinCard from '../../containers/CoinCard/index';
 import './CoinList.css';
 
 const CoinList = ({coins}) => (

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import MainView from '../MainView/MainView';
+import VisibleCoinList from '../containers/VisibleCoinList';
+import MainView from '../presentation/MainView/MainView';
 import './App.css';
-import VisibleCoinList from '../VisibleCoinList';
 
 class App extends Component {
 
