@@ -33,17 +33,17 @@ function getCryptoCompareData() {
 }
 
 // Request initial data to populate topCoins
-function getMarketCapData() {
-  return axios.get(COINMARKETCAP_API_URI + '?limit=20');
+function getMarketCapData(numberToShow) {
+  return axios.get(COINMARKETCAP_API_URI + `?limit=${numberToShow}`);
 }
 
-export function fetchCoinData() {
+export function fetchCoinData(numberToShow) {
   return function (dispatch) {
     // Tell store we are starting a request
     // TODO: Load spinner
     dispatch(requestInitialData());
 
-    return axios.all([getMarketCapData(), getCryptoCompareData()])
+    return axios.all([getMarketCapData(numberToShow), getCryptoCompareData()])
       .then(
         axios.spread((marketCap, cryptoCompare) => {
           dispatch(receiveCoinData(

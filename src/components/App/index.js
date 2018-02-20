@@ -2,16 +2,18 @@ import { connect } from 'react-redux';
 import { fetchCoinData } from '../../redux/actions';
 import App from './App';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    isReady: state.data.isReady
+    isReady: state.data.isReady,
+    numberToShow: state.displayOptions.count
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    dispatch,
-    fetchCoinData
+    fetchCoinData: numberToShow => {
+      dispatch(fetchCoinData(numberToShow));
+    }
   };
 };
 

@@ -6,8 +6,8 @@ import VisibleCoinList from '../VisibleCoinList';
 class App extends Component {
 
   componentDidMount() {
-    const {dispatch, fetchCoinData} = this.props;
-    dispatch(fetchCoinData());
+    const {fetchCoinData, numberToShow} = this.props;
+    fetchCoinData(numberToShow);
   }
 
   render() {
