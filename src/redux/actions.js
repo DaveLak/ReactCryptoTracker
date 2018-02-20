@@ -53,7 +53,7 @@ export function fetchCoinData() {
             )
           );
         }),
-        error => console.log('An error occurred.', error)
+        error => console.log('An error occurred fetching initial data.', error)
       );
   };
 }
@@ -65,5 +65,28 @@ export function setVisibleCoins(count) {
   return {
     type: SET_VISIBLE_COINS,
     count
+  };
+}
+
+export const RECEIVE_COIN_PRICE = 'RECEIVE_COIN_PRICE';
+
+export function receivePrice(coinSymbol, price) {
+  return {
+    type: RECEIVE_COIN_PRICE,
+    payload: {
+      coinSymbol,
+      price
+    }
+  };
+}
+
+export function fetchCoinPrice(coinSymbol) {
+  return function (dispatch) {
+
+    return axios.get(CRYPTOCOMPARE_API_URI + `/price?fsym=${coinSymbol}&tsyms=USD`)
+      .then(
+        response => dispatch(receivePrice(coinSymbol, response.data.USD)),
+        error => console.log('An error fetching price.', error)
+      );
   };
 }

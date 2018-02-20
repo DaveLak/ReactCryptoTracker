@@ -1,4 +1,5 @@
 import React from 'react';
+import CoinList from '../CoinList/CoinList';
 
 class VisibleCoinList extends React.Component {
 
@@ -8,10 +9,9 @@ class VisibleCoinList extends React.Component {
   }
 
   render() {
+    const {coins} = this.props;
     return (
-      <div>
-        {this.props.children}
-      </div>
+      <CoinList coins={coins} />
     );
   }
 }

@@ -4,14 +4,15 @@ import VisibleCoinList from './VisibleCoinList';
 
 const mapStateToProps = state => {
   return {
-    count: state.displayOptions.count
+    count: state.displayOptions.count,
+    coins: state.data.visibleCoins
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    setVisibleCoins: (count) => {
-      dispatch(setVisibleCoins(count))
+    setVisibleCoins: (coinSymbol) => {
+      dispatch(setVisibleCoins(coinSymbol))
     }
 
   };

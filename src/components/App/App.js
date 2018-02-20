@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import CardHolder from '../CardHolder/CardHolder';
+import MainView from '../MainView/MainView';
 import './App.css';
 import VisibleCoinList from '../VisibleCoinList';
-import CoinList from '../CoinList';
 
 class App extends Component {
 
@@ -18,11 +17,9 @@ class App extends Component {
     return (
       <div className="App">
         {isReady ? (
-          <CardHolder>
-            <VisibleCoinList>
-              <CoinList />
-            </VisibleCoinList>
-          </CardHolder>
+          <MainView>
+            <VisibleCoinList />
+          </MainView>
         ) : (
           <h2>Loading...</h2>
         )

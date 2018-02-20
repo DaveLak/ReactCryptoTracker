@@ -6,6 +6,7 @@ import {
   REQUEST_INITIAL_DATA,
   RECEIVE_INITIAL_DATA,
   SET_VISIBLE_COINS,
+  RECEIVE_COIN_PRICE,
 } from './actions';
 
 /* Display options reducer */
@@ -47,8 +48,24 @@ const data = (state = initialState.data, action) => {
         ...state,
         visibleCoins: setVisibleCoins(state, action.count)
       };
+    case RECEIVE_COIN_PRICE:
+      return {
+        ...state,
+        visibleCoins: setCoinPrice(state.visibleCoins, action.payload)
+      };
     default:
       return state;
+  }
+};
+
+const setCoinPrice = (visibleCoins, payload) => {
+
+  let prop = visibleCoins[payload.coinSymbol];
+  prop.price = payload.price;
+
+  return {
+    ...visibleCoins,
+    [payload.coinSymbol]: prop
   }
 };
 
@@ -57,7 +74,7 @@ const setVisibleCoins = (state, count) => {
   let visibleCoins = {};
 
   state.topCoins
-    .slice(0, (Number(count) ))
+    .slice(0, Number(count))
     .forEach(coin => {
       return visibleCoins[coin.symbol] = {
         coinSymbol: coin.symbol,
