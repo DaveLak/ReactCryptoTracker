@@ -1,12 +1,10 @@
 import { connect } from 'react-redux';
 import CoinList from './CoinList';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
-    coins: state.data.topCoins,
-    baseImgUrl: state.data.baseImgUrl,
-    extraCoinData: state.data.coinData
-  };
+    coins: state.data.visibleCoins
+  }
 };
 
 export default connect(mapStateToProps)(CoinList)

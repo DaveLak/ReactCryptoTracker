@@ -7,7 +7,7 @@ export const UPDATE_DISPLAY_COUNT = 'UPDATE_DISPLAY_COUNT';
 // Tells reducer we are requesting initial data. We're not ready to display at this point
 export const REQUEST_INITIAL_DATA = 'REQUEST_INITIAL_DATA';
 
-export function RequestInitialData() {
+export function requestInitialData() {
   return {
     type: REQUEST_INITIAL_DATA
   };
@@ -41,7 +41,7 @@ export function fetchCoinData() {
   return function (dispatch) {
     // Tell store we are starting a request
     // TODO: Load spinner
-    dispatch(RequestInitialData());
+    dispatch(requestInitialData());
 
     return axios.all([getMarketCapData(), getCryptoCompareData()])
       .then(
@@ -55,5 +55,15 @@ export function fetchCoinData() {
         }),
         error => console.log('An error occurred.', error)
       );
+  };
+}
+
+// Set up visible coin state
+export const SET_VISIBLE_COINS = 'SET_VISIBLE_COINS';
+
+export function setVisibleCoins(count) {
+  return {
+    type: SET_VISIBLE_COINS,
+    count
   };
 }
