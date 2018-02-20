@@ -4,11 +4,13 @@ import Card from '../Card/Card';
 class CoinCard extends React.Component {
 
   componentDidMount() {
-    this.props.fetchCoinPrice(this.props.symbol)
+    const {fetchCoinPrice, symbol, displayCurrency} = this.props;
+    fetchCoinPrice(symbol, displayCurrency);
   }
 
   render() {
-    return <Card {...this.props}  />;
+    const {displayCurrency} = this.props;
+    return <Card {...this.props} displayCurrency={displayCurrency} />;
   }
 
 }

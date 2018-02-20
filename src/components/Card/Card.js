@@ -1,12 +1,11 @@
 import React from 'react';
 import './Card.css';
 
-const Card = props => (
+const Card = ({imgSrc, name, symbol, price, displayCurrency}) => (
   <div className="Card">
-    <img src={props.imgSrc} alt={`${props.name} logo`} />
-    <h3>{props.name}</h3>
-    <p>{props.symbol}</p>
-    <p>{props.price}</p>
+    <img src={imgSrc} alt={`${name} logo`} />
+    <h3>{name}</h3>
+    <p>{price} {displayCurrency}</p>
   </div>
 );
 export default Card;

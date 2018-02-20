@@ -80,12 +80,12 @@ export function receivePrice(coinSymbol, price) {
   };
 }
 
-export function fetchCoinPrice(coinSymbol) {
+export function fetchCoinPrice(coinSymbol, displayCurrency) {
   return function (dispatch) {
 
-    return axios.get(CRYPTOCOMPARE_API_URI + `/price?fsym=${coinSymbol}&tsyms=USD`)
+    return axios.get(CRYPTOCOMPARE_API_URI + `/price?fsym=${coinSymbol}&tsyms=${displayCurrency}`)
       .then(
-        response => dispatch(receivePrice(coinSymbol, response.data.USD)),
+        response => dispatch(receivePrice(coinSymbol, response.data[displayCurrency])),
         error => console.log('An error fetching price.', error)
       );
   };
