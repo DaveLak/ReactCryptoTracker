@@ -1,15 +1,11 @@
 import initialState from '../store/initialState';
 import {
-  SET_VISIBLE_COINS
-} from '../actions/visibleCoins';
-import {
-  REQUEST_COIN_PRICE,
-  RECEIVE_COIN_PRICE
-} from '../actions/coinPrice';
-import {
   REQUEST_INITIAL_DATA,
-  RECEIVE_INITIAL_DATA
-} from '../actions/initialData';
+  RECEIVE_INITIAL_DATA,
+  REQUEST_COIN_PRICE,
+  RECEIVE_COIN_PRICE,
+  SET_VISIBLE_COINS,
+} from '../actions/data';
 
 /* Data reducer. */
 const data = (state = initialState.data, action) => {

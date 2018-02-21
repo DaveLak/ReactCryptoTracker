@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setVisibleCoins } from '../../../redux/actions/visibleCoins';
+import { setVisibleCoins } from '../../../redux/actions/data';
 import VisibleCoinList from './VisibleCoinList';
 
 const mapStateToProps = state => {

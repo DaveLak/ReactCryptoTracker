@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchCoinPrice } from '../../../redux/actions/coinPrice';
+import { fetchCoinPrice } from '../../../redux/actions/data';
 import CoinCard from './CoinCard';
 
 const mapDispatchToProps = dispatch => {
