@@ -7,9 +7,7 @@ const Card = ({ imgSrc, name, symbol, price, displayCurrency }) => (
     <h3>{name}</h3>
     <img src={imgSrc !== "" ? imgSrc : placeholder} alt={`${name} logo`} />
     <p>{symbol}</p>
-    <p>
-      {price} {displayCurrency}
-    </p>
+    <p>{price ? `${price} ${displayCurrency}` : "Price Unavailable"}</p>
   </div>
 );
 
