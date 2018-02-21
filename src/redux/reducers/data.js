@@ -3,11 +3,12 @@ import {
   SET_VISIBLE_COINS
 } from '../actions/visibleCoins';
 import {
+  REQUEST_COIN_PRICE,
   RECEIVE_COIN_PRICE
 } from '../actions/coinPrice';
 import {
-  RECEIVE_INITIAL_DATA,
-  REQUEST_INITIAL_DATA
+  REQUEST_INITIAL_DATA,
+  RECEIVE_INITIAL_DATA
 } from '../actions/initialData';
 
 /* Data reducer. */
@@ -31,6 +32,7 @@ const data = (state = initialState.data, action) => {
         ...state,
         visibleCoins: setVisibleCoins(state, action.count)
       };
+    case REQUEST_COIN_PRICE:
     case RECEIVE_COIN_PRICE:
       return {
         ...state,
@@ -63,7 +65,6 @@ const setVisibleCoins = (state, count) => {
         coinSymbol: coin.symbol,
         name: coin.name,
         imgSrc: buildImgSrc(coin.symbol, state.baseImgUrl, state.coinData),
-        price: 'loading...'
       };
     });
 

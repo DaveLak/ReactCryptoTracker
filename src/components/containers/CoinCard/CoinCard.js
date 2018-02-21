@@ -8,6 +8,16 @@ class CoinCard extends React.Component {
     fetchCoinPrice(symbol, displayCurrency);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props.displayCurrency === nextProps.displayCurrency) {
+      return;
+    }
+
+    const {fetchCoinPrice, symbol, displayCurrency} = nextProps;
+
+    fetchCoinPrice(symbol, displayCurrency);
+  }
+
   render() {
     const {displayCurrency} = this.props;
     return <Card {...this.props} displayCurrency={displayCurrency} />;

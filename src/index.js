@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import 'normalize.css';
 
 import configureStore from './redux/store/configureStore';
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 import App from './components/App';
 import './index.css';
 
@@ -16,4 +16,4 @@ render(
     <App />
   </Provider>,
   document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();

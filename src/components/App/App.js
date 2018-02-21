@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import VisibleCoinList from '../containers/VisibleCoinList';
+import CurrencySelector from '../containers/CurrencySelector';
 import MainView from '../presentation/MainView/MainView';
+import Nav from '../presentation/Nav/Nav';
 import './App.css';
 
 class App extends Component {
@@ -18,6 +20,9 @@ class App extends Component {
       <div className="App">
         {isReady ? (
           <MainView>
+            <Nav>
+              <CurrencySelector />
+            </Nav>
             <VisibleCoinList />
           </MainView>
         ) : (
