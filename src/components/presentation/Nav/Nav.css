@@ -1,3 +1,37 @@
 .Nav {
+    padding: 15px 0 18px 0;
+    margin-bottom: 1rem;
+    background: #008b8b;
+    box-shadow: 0 0 17px 0 rgba(15, 17, 8, 0.82);
+    color: #efffe9;
+    font-weight: bold;
+}
 
+.Nav label {
+    margin: 0 5px;
+}
+
+.Nav select {
+    display: inline-block;
+    color: #0f1108;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 3px 30px 5px 8px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #f8f8f8;
+    background-image: url('./downArrow.svg');
+    background-position: right 3px center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    appearance: none;
+}
+
+@media (max-width: 450px) {
+    .Nav label {
+        margin: 10px 5px;
+        display: block;
+    }
 }
