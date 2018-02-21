@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
-import { fetchCoinData } from '../../redux/actions/initialData';
-import App from './App';
+import { connect } from "react-redux";
+import { fetchCoinData } from "../../redux/actions/data";
+import App from "./App";
 
 const mapStateToProps = state => {
   return {

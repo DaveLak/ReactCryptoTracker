@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
-import { updateDisplayCurrency } from '../../../redux/actions/displayOptions';
-import CurrencySelector from './CurrencySelector';
+import { connect } from "react-redux";
+import { updateDisplayCurrency } from "../../../redux/actions/displayOptions";
+import CurrencySelector from "./CurrencySelector";
 
 const mapStateToProps = state => {
   return {
@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateDisplayCurrency: (displayCurrency) => {
+    updateDisplayCurrency: displayCurrency => {
       dispatch(updateDisplayCurrency(displayCurrency));
     }
   };

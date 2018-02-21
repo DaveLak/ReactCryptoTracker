@@ -1,19 +1,18 @@
-import React from 'react';
+import React from "react";
 
 class VisibleCountSelector extends React.Component {
-
   constructor(props) {
     super(props);
     this.handleCountChange = this.handleCountChange.bind(this);
   }
 
   handleCountChange(event) {
-    const {updateDisplayCount} = this.props;
+    const { updateDisplayCount } = this.props;
     updateDisplayCount(event.target.value);
   }
 
   render() {
-    const {count, textBefore, textAfter} = this.props;
+    const { count, textBefore, textAfter } = this.props;
     return (
       <label>
         {textBefore}
