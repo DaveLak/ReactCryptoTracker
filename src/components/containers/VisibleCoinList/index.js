@@ -5,6 +5,7 @@ import VisibleCoinList from './VisibleCoinList';
 const mapStateToProps = state => {
   return {
     count: state.displayOptions.count,
+    displayCurrency: state.displayOptions.currency,
     coins: state.data.visibleCoins
   };
 };
@@ -12,9 +13,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     setVisibleCoins: (coinSymbol) => {
-      dispatch(setVisibleCoins(coinSymbol))
+      dispatch(setVisibleCoins(coinSymbol));
     }
-
   };
 };
 

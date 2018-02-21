@@ -4,14 +4,14 @@ import CoinList from '../../presentation/CoinList/CoinList';
 class VisibleCoinList extends React.Component {
 
   componentWillMount() {
-    const { setVisibleCoins , count } = this.props;
+    const {setVisibleCoins, count} = this.props;
     setVisibleCoins(count);
   }
 
   render() {
-    const {coins} = this.props;
+    const {coins, displayCurrency} = this.props;
     return (
-      <CoinList coins={coins} />
+      <CoinList coins={coins} displayCurrency={displayCurrency} />
     );
   }
 }
