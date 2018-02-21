@@ -1,19 +1,18 @@
-import React from 'react';
+import React from "react";
 
 class CurrencySelector extends React.Component {
-
   constructor(props) {
     super(props);
     this.handleCurrencyChange = this.handleCurrencyChange.bind(this);
   }
 
   handleCurrencyChange(event) {
-    const {updateDisplayCurrency} = this.props;
+    const { updateDisplayCurrency } = this.props;
     updateDisplayCurrency(event.target.value);
   }
 
   render() {
-    const {displayCurrency, textBefore, textAfter} = this.props;
+    const { displayCurrency, textBefore, textAfter } = this.props;
     return (
       <label>
         {textBefore}
@@ -25,7 +24,6 @@ class CurrencySelector extends React.Component {
         </select>
         {textAfter}
       </label>
-
     );
   }
 }

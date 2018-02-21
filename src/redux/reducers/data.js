@@ -1,11 +1,11 @@
-import initialState from '../store/initialState';
+import initialState from "../store/initialState";
 import {
   REQUEST_INITIAL_DATA,
   RECEIVE_INITIAL_DATA,
   REQUEST_COIN_PRICE,
   RECEIVE_COIN_PRICE,
-  SET_VISIBLE_COINS,
-} from '../actions/data';
+  SET_VISIBLE_COINS
+} from "../actions/data";
 
 /* Data reducer. */
 const data = (state = initialState.data, action) => {
@@ -21,7 +21,7 @@ const data = (state = initialState.data, action) => {
         isReady: true,
         topCoins: action.payload.topCoins,
         coinData: action.payload.coinData,
-        baseImgUrl: action.payload.baseImgUrl,
+        baseImgUrl: action.payload.baseImgUrl
       };
     case SET_VISIBLE_COINS:
       return {
@@ -40,7 +40,6 @@ const data = (state = initialState.data, action) => {
 };
 
 const setCoinPrice = (visibleCoins, payload) => {
-
   let prop = visibleCoins[payload.coinSymbol];
   prop.price = payload.price;
 
@@ -51,18 +50,15 @@ const setCoinPrice = (visibleCoins, payload) => {
 };
 
 const setVisibleCoins = (state, count) => {
-
   let visibleCoins = {};
 
-  state.topCoins
-    .slice(0, Number(count))
-    .forEach(coin => {
-      return visibleCoins[coin.symbol] = {
-        coinSymbol: coin.symbol,
-        name: coin.name,
-        imgSrc: buildImgSrc(coin.symbol, state.baseImgUrl, state.coinData),
-      };
+  state.topCoins.slice(0, Number(count)).forEach(coin => {
+    return (visibleCoins[coin.symbol] = {
+      coinSymbol: coin.symbol,
+      name: coin.name,
+      imgSrc: buildImgSrc(coin.symbol, state.baseImgUrl, state.coinData)
     });
+  });
 
   return visibleCoins;
 };
@@ -74,7 +70,7 @@ const buildImgSrc = (coinSymbol, baseUrl, data) => {
     return baseUrl + data[coinSymbol].ImageUrl;
   }
   // Else add a placeholder
-  return 'http://fillmurray.com/50/50';
+  return "http://fillmurray.com/50/50";
 };
 
 export default data;

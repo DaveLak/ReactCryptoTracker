@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
-import { setVisibleCoins } from '../../../redux/actions/data';
-import VisibleCoinList from './VisibleCoinList';
+import { connect } from "react-redux";
+import { setVisibleCoins } from "../../../redux/actions/data";
+import VisibleCoinList from "./VisibleCoinList";
 
 const mapStateToProps = state => {
   return {
@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setVisibleCoins: (coinSymbol) => {
+    setVisibleCoins: coinSymbol => {
       dispatch(setVisibleCoins(coinSymbol));
     }
   };
