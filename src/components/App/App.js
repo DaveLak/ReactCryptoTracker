@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import VisibleCoinList from '../containers/VisibleCoinList';
 import CurrencySelector from '../containers/CurrencySelector';
 import VisibleCountSelector from '../containers/VisibleCountSelector';
+import LoadingSpinner from '../presentation/LoadingSpinner/LoadingSpinner';
 import MainView from '../presentation/MainView/MainView';
 import Nav from '../presentation/Nav/Nav';
 import './App.css';
@@ -36,7 +37,7 @@ class App extends Component {
             <VisibleCoinList />
           </MainView>
         ) : (
-          <h2>Loading...</h2>
+          <LoadingSpinner/>
         )
 
         }
