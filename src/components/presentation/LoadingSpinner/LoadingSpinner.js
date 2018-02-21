@@ -1,5 +1,5 @@
 import React from "react";
-import loadingIcon from "./loadingCoin.svg";
+import loadingIcon from "../../../assets/images/loadingCoin.svg";
 import "./LoadingSpinner.css";
 
 const LoadingSpinner = props => (

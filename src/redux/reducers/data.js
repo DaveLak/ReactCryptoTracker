@@ -69,8 +69,8 @@ const buildImgSrc = (coinSymbol, baseUrl, data) => {
     // If it does, then build the URL
     return baseUrl + data[coinSymbol].ImageUrl;
   }
-  // Else add a placeholder
-  return "http://fillmurray.com/50/50";
+  // Else it's an empty string
+  return "";
 };
 
 export default data;
