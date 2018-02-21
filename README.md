@@ -9,3 +9,4 @@ This is more of a toy app than anything. Please do not make any financial decisi
 * [Create React App](https://github.com/facebookincubator/create-react-app) from which this project was bootstrapped.
 * [CryptoCompare](https://www.cryptocompare.com/api/) for providing the API we pull coin data and images from.
 * [CoinMarketCap](https://coinmarketcap.com/api/) for providing the API we pull market capitalization data from.
+* [Freepik](http://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/) for making the loading icon and licensing it under [Creative Commons BY 3.0](http://creativecommons.org/licenses/by/3.0/)
