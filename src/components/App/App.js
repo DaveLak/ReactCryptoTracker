@@ -30,8 +30,8 @@ class App extends Component {
         {isReady ? (
           <MainView>
             <Nav>
-              <VisibleCountSelector/>
-              <CurrencySelector />
+              <VisibleCountSelector textBefore={'Show me'} textAfter={'coins'}/>
+              <CurrencySelector textBefore={'in'} />
             </Nav>
             <VisibleCoinList />
           </MainView>

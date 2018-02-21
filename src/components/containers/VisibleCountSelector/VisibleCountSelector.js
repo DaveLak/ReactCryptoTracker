@@ -13,14 +13,18 @@ class VisibleCountSelector extends React.Component {
   }
 
   render() {
-    const {count} = this.props;
+    const {count, textBefore, textAfter} = this.props;
     return (
-      <select value={count} onChange={this.handleCountChange}>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
-        <option value="25">25</option>
-      </select>
+      <label>
+        {textBefore}
+        <select value={count} onChange={this.handleCountChange}>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+        </select>
+        {textAfter}
+      </label>
     );
   }
 }

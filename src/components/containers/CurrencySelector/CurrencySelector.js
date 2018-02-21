@@ -13,14 +13,19 @@ class CurrencySelector extends React.Component {
   }
 
   render() {
-    const {displayCurrency} = this.props;
+    const {displayCurrency, textBefore, textAfter} = this.props;
     return (
-      <select value={displayCurrency} onChange={this.handleCurrencyChange}>
-        <option value="USD">USD</option>
-        <option value="EUR">EUR</option>
-        <option value="BTC">BTC</option>
-        <option value="ETH">ETH</option>
-      </select>
+      <label>
+        {textBefore}
+        <select value={displayCurrency} onChange={this.handleCurrencyChange}>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="BTC">BTC</option>
+          <option value="ETH">ETH</option>
+        </select>
+        {textAfter}
+      </label>
+
     );
   }
 }
