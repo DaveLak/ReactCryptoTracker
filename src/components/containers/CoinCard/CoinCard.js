@@ -19,8 +19,7 @@ class CoinCard extends React.Component {
   }
 
   render() {
-    const {displayCurrency} = this.props;
-    return <Card {...this.props} displayCurrency={displayCurrency} />;
+    return <Card {...this.props} />;
   }
 
 }
