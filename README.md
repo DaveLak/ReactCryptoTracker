@@ -1,6 +1,14 @@
-## ReactCryptoTracker
+# Archived & Unmaintained.
 
-See it in action at [reactcryptotracker.com](http://reactcryptotracker.com/)
+I created this repo to play around and it served that purpose. I don't plan to come back to it so instead of deleteing it I've chosen to archive it.
+
+Feel free to clone or fork it but please understand the **project dependencies may have security issues** and should be inspected before use.
+
+Cheers :)
+
+---
+
+## ReactCryptoTracker
 
 **ReactCryptoTracker** is a simple React app for displaying real-time data about a several of the most popular cryptocurrencies.
 
